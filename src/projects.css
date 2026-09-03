@@ -1,0 +1,214 @@
+.pgrid-projects {
+  padding: 35px 0 55px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: start;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+  box-shadow: 0 7px 22px #3858430a;
+}
+
+.project-card-toggle {
+  width: 100%;
+  min-height: 82px;
+  padding: 15px;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto auto;
+  gap: 11px;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--soft);
+}
+
+.project-title {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.project-title strong {
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-title small,
+.project-stats small {
+  color: var(--muted);
+  font: 8px DM Mono, monospace;
+}
+
+.project-stats {
+  display: flex;
+  gap: 8px;
+}
+
+.project-stats small {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.project-chevron {
+  color: var(--muted);
+  transition: transform .25s ease;
+}
+
+.project-card-toggle[aria-expanded='true'] .project-chevron {
+  transform: rotate(180deg);
+}
+
+.project-details {
+  padding: 0 15px 15px 66px;
+  animation: project-details .28s ease both;
+}
+
+.project-details p {
+  margin: 0 0 13px;
+  color: var(--body);
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.project-details a {
+  width: fit-content;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: 8px;
+  background: #17201c;
+  color: #eff7f2;
+  font: 9px DM Mono, monospace;
+}
+
+.pgrid-dark .project-details a {
+  background: #e1e8e3;
+  color: #17201c;
+}
+
+.projects-more {
+  min-width: 150px;
+  margin: 18px auto 0;
+  padding: 10px 18px;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface);
+  color: inherit;
+  font: 600 9px DM Mono, monospace;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: border-color .2s ease, transform .2s ease;
+}
+
+.projects-more:hover {
+  border-color: currentColor;
+  transform: translateY(-1px);
+}
+
+.project-card.project-reveal {
+  animation: project-reveal .5s cubic-bezier(.2, .75, .25, 1) both;
+}
+
+.project-skeleton {
+  height: 82px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: linear-gradient(100deg, var(--surface) 30%, var(--soft) 50%, var(--surface) 70%);
+  background-size: 220% 100%;
+  animation: project-loading 1.4s linear infinite;
+}
+
+.projects-message {
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--surface);
+  color: var(--body);
+  font-size: 10px;
+}
+
+.projects-message a {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: inherit;
+  font-weight: 700;
+}
+
+@keyframes project-details {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes project-reveal {
+  from { opacity: 0; transform: translateY(20px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes project-loading {
+  to { background-position: -220% 0; }
+}
+
+@media (max-width: 620px) {
+  .pgrid-projects {
+    padding-top: 25px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-stats {
+    display: none;
+  }
+
+  .project-card-toggle {
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+  }
+
+  .project-details {
+    padding-left: 66px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-chevron,
+  .projects-more {
+    transition: none;
+  }
+
+  .project-card.project-reveal,
+  .project-details,
+  .project-skeleton {
+    animation: none;
+  }
+}
