@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import { ArrowUpRight, Box, Camera, ChevronDown, ChevronLeft, ChevronRight, Cpu, ExternalLink, FileText, GitFork, Globe2, HardDrive, Languages, Mail, Moon, Music2, Network, Star, Sun, Wrench, X } from 'lucide-react'
+import { ArrowUpRight, Box, ChevronDown, ChevronLeft, ChevronRight, Cpu, ExternalLink, FileText, GitFork, Globe2, HardDrive, Languages, Mail, Moon, Music2, Network, Star, Sun, Wrench, X } from 'lucide-react'
 import { FaDiscord, FaLinkedinIn, FaMicrochip, FaWindows } from 'react-icons/fa6'
 import { SiArduino, SiBlender, SiBootstrap, SiCplusplus, SiCss, SiGithub, SiHtml5, SiMysql, SiNodedotjs, SiPhp, SiPython, SiReact } from 'react-icons/si'
 import galleryImageUrls from 'virtual:gallery-images'
@@ -118,7 +118,6 @@ function Gallery() {
     <div className="gallery-grid">
       {visibleItems.map((photo, index) => <button className={`gallery-photo ${expanded && index >= 8 ? 'gallery-reveal' : ''}`} style={{ animationDelay: `${Math.max(0, index - 8) * 45}ms` }} key={photo.src} onClick={() => setSelected(photo)} aria-label={`${t.galleryOpen}: ${photo.caption[lang]}`}>
         <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async"/>
-        <span><Camera size={14}/>{photo.caption[lang]}</span>
         <b>{String(index + 1).padStart(2, '0')}</b>
       </button>)}
     </div>
@@ -132,7 +131,7 @@ function Gallery() {
         <button className="gallery-nav gallery-next" onClick={event => { event.stopPropagation(); moveSelection(1) }} aria-label={t.galleryNext}><ChevronRight size={27}/></button>
       </>}
       <img src={selected.src} alt={selected.alt} onClick={event => event.stopPropagation()}/>
-      <p>{selectedIndex + 1} / {galleryItems.length} · {selected.caption[lang]}</p>
+      <p>{selectedIndex + 1} / {galleryItems.length}</p>
     </div>}
   </section>
 }

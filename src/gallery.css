@@ -58,19 +58,11 @@
   }
 }
 
-.gallery-photo span,
 .gallery-photo b {
   position: absolute;
   z-index: 1;
   bottom: 16px;
   font: 9px DM Mono, monospace;
-}
-
-.gallery-photo span {
-  left: 16px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
 }
 
 .gallery-photo b {
