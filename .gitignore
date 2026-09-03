@@ -26,6 +26,7 @@ public/gallery/_converted/
 .dev.vars
 
 # Logs e ficheiros temporários
+tmp/
 *.log
 *.tmp
 *.temp
