@@ -59,6 +59,23 @@ const text = {
 
 const navTargets = ['p0', 'p2', 'p1', 'p3', 'p4', 'p5']
 
+const themeCookieName = 'xxsi-theme'
+function readThemePreference() {
+  const cookieTheme = document.cookie
+    .split('; ')
+    .find(cookie => cookie.startsWith(`${themeCookieName}=`))
+    ?.split('=')[1]
+
+  if (cookieTheme === 'dark' || cookieTheme === 'light') return cookieTheme
+
+  const savedTheme = localStorage.getItem(themeCookieName)
+  return savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light'
+}
+function saveThemePreference(theme) {
+  document.cookie = `${themeCookieName}=${theme}; Max-Age=31536000; Path=/; SameSite=Lax`
+  localStorage.removeItem(themeCookieName)
+}
+
 const LangContext = createContext(null)
 function LangProvider({ children }) {
   const [lang, setLang] = useState(() => localStorage.getItem('xxsi-lang') || 'pt')
@@ -318,8 +335,13 @@ function GitHubProjects() {
 
 function V1() {
   const { t, lang } = useLang(); const start = new Date(new Date().getFullYear(),0,1); const end = new Date(new Date().getFullYear()+1,0,1); const year = Math.round(((Date.now()-start)/(end-start))*100)
-  const [dark, setDark] = useState(() => localStorage.getItem('xxsi-theme') === 'dark')
-  useEffect(() => { localStorage.setItem('xxsi-theme', dark ? 'dark' : 'light') }, [dark])
+  const [dark, setDark] = useState(() => readThemePreference() === 'dark')
+  useEffect(() => {
+    const theme = dark ? 'dark' : 'light'
+    saveThemePreference(theme)
+    document.documentElement.style.colorScheme = theme
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#101511' : '#f1f6f3')
+  }, [dark])
   return <main className={`pgrid ${dark ? 'pgrid-dark' : ''}`}><header className="pgrid-nav"><Link to="/" className="pgrid-logo">FA</Link><nav>{t.nav.map((x,i)=><a href={`#${navTargets[i]}`} key={x}>{x}</a>)}</nav><div className="pgrid-actions"><LangButton/><button className="theme-toggle" onClick={() => setDark(v => !v)} aria-label={dark ? (lang === 'pt' ? 'Ativar tema claro' : 'Use light mode') : (lang === 'pt' ? 'Ativar tema escuro' : 'Use dark mode')}>{dark ? <Sun size={14}/> : <Moon size={14}/>}<span>{dark ? 'LIGHT' : 'DARK'}</span></button></div></header><div className="pgrid-wrap">
     <section className="pgrid-head" id="p0"><div className="identity"><img src="/profile.png" alt="Francisco Almeida"/><div><h1>Francisco Almeida <b>✓</b></h1><p>{t.role}<i></i></p><MailLink>{email}</MailLink></div></div><div className="local"><Clock/><span>WEST · {t.city}</span></div></section>
     <section className="pgrid-about"><p>{t.intro}</p><div className="socials"><a href="https://github.com/Xxsi07" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><SiGithub size={15}/></a><a href={linkedInUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><FaLinkedinIn size={14}/></a><a href={discordProfileUrl} target="_blank" rel="noreferrer" aria-label="Discord" title="Discord"><FaDiscord size={15}/></a><MailLink aria-label="Email" title="Email"><Mail size={14}/></MailLink><CVLink className="cv-icon" aria-label="CV" title="CV"><FileText size={14}/></CVLink></div></section>
