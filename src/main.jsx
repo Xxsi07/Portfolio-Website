@@ -12,7 +12,7 @@ import './projects.css'
 
 const text = {
   pt: {
-    nav: ['Sobre', 'Experiência', 'Competências', 'Projetos', 'Galeria', 'Contacto'], role: 'Técnico de Sistemas & Programador', shortRole: 'IT · Sistemas · Web', status: 'Disponível para oportunidades', city: 'Porto, Portugal',
+    nav: ['Sobre', 'Competências', 'Experiência', 'Projetos', 'Galeria', 'Contacto'], role: 'Técnico de Sistemas & Programador', shortRole: 'IT · Sistemas · Web', status: 'Disponível para oportunidades', city: 'Porto, Portugal',
     intro: 'Sou o Francisco, um jovem técnico de informática do Porto. Gosto de perceber como as coisas funcionam — do hardware e das redes até às interfaces que usamos todos os dias.',
     aboutTitle: 'Construo, reparo e continuo a aprender.',
     about: 'Concluí o curso profissional de Técnico de Gestão e Programação de Sistemas Informáticos, nível 4 EQF. Procuro uma oportunidade onde possa aplicar o que já aprendi, enfrentar desafios maiores e crescer com uma equipa experiente.',
@@ -27,14 +27,14 @@ const text = {
       { name: 'Sistemas & redes', icon: 'server', items: ['Windows Server', 'NAS', 'Switches', 'Hardware'] }, { name: 'Laboratório', icon: 'cpu', items: ['Arduino Uno', 'PIC', 'Blender', 'Impressão 3D'] },
     ],
     education: 'Formação', course: 'Técnico de Gestão e Programação de Sistemas Informáticos', school: 'Escola Básica e Secundária de Águas Santas', educationDate: '2023 — 2026 · Nível 4 EQF',
-    contactTitle: 'Tem um problema interessante para resolver?', contactText: 'Estou disponível para estágio, primeiro emprego ou uma colaboração interessante.', mail: 'Enviar email', cv: 'Descarregar CV',
-    stats: [['03', 'estágios'], ['02', 'países'], ['EQF 4', 'qualificação'], ['2026', 'formação concluída']], profile: 'Perfil', toolkit: 'Toolkit', currently: 'Neste momento', currentlyText: 'A aprofundar React, Node.js, sistemas e redes enquanto procuro o próximo desafio.',
+    contactTitle: 'Tem um problema interessante para resolver?', contactText: 'Estou disponível para part-time ou uma colaboração interessante.', mail: 'Enviar email', cv: 'Descarregar CV',
+    stats: [['03', 'estágios'], ['02', 'países'], ['EQF 4', 'qualificação'], ['2026', 'formação concluída']], profile: 'Perfil', toolkit: 'Toolkit', currently: 'Neste momento', currentlyText: 'A aprofundar React e Node.js enquanto procuro o próximo desafio.',
     gallery: 'Galeria', galleryLead: 'Alguns momentos fora do código e dos sistemas.', galleryOpen: 'Ampliar fotografia', galleryMore: 'Ver mais', galleryLess: 'Ver menos', galleryPrevious: 'Fotografia anterior', galleryNext: 'Fotografia seguinte',
     projects: 'Projetos', projectsLead: 'Projetos públicos e experiências que vou construindo no GitHub.', projectsLoading: 'A carregar projetos…', projectsError: 'Não foi possível carregar os projetos.', projectsEmpty: 'Ainda não existem projetos públicos.', projectsMore: 'Ver mais projetos', projectsLess: 'Ver menos projetos', projectOpen: 'Ver no GitHub', projectDescription: 'Este projeto ainda não tem uma descrição no GitHub.',
     discordActive: 'Atividade no Discord', discordIdle: 'Sem atividade de jogo', discordIdleText: 'Online no Discord', discordOffline: 'Offline no Discord', discordLoading: 'A ligar ao Discord…', discordSession: 'Nesta sessão',
   },
   en: {
-    nav: ['About', 'Experience', 'Skills', 'Projects', 'Gallery', 'Contact'], role: 'IT Systems Technician & Developer', shortRole: 'IT · Systems · Web', status: 'Open to opportunities', city: 'Porto, Portugal',
+    nav: ['About', 'Skills', 'Experience', 'Projects', 'Gallery', 'Contact'], role: 'IT Systems Technician & Developer', shortRole: 'IT · Systems · Web', status: 'Open to opportunities', city: 'Porto, Portugal',
     intro: "I'm Francisco, a young IT technician from Porto. I like understanding how things work — from hardware and networks to the interfaces we use every day.",
     aboutTitle: 'I build, repair and keep learning.',
     about: 'I completed a vocational course in IT Systems Management and Programming, EQF level 4. I am looking for an opportunity to apply what I have learned, take on bigger challenges and grow alongside an experienced team.',
@@ -49,13 +49,15 @@ const text = {
       { name: 'Systems & networks', icon: 'server', items: ['Windows Server', 'NAS', 'Switches', 'Hardware'] }, { name: 'Lab', icon: 'cpu', items: ['Arduino Uno', 'PIC', 'Blender', '3D printing'] },
     ],
     education: 'Education', course: 'IT Systems Management and Programming Technician', school: 'Escola Básica e Secundária de Águas Santas', educationDate: '2023 — 2026 · EQF level 4',
-    contactTitle: 'Got an interesting problem to solve?', contactText: "I'm available for an internship, first role or an interesting collaboration.", mail: 'Send email', cv: 'Download CV',
-    stats: [['03', 'internships'], ['02', 'countries'], ['EQF 4', 'qualification'], ['2026', 'course completed']], profile: 'Profile', toolkit: 'Toolkit', currently: 'Right now', currentlyText: 'Going deeper into React, Node.js, systems and networks while looking for the next challenge.',
+    contactTitle: 'Got an interesting problem to solve?', contactText: "I'm available for part-time work or an interesting collaboration.", mail: 'Send email', cv: 'Download CV',
+    stats: [['03', 'internships'], ['02', 'countries'], ['EQF 4', 'qualification'], ['2026', 'course completed']], profile: 'Profile', toolkit: 'Toolkit', currently: 'Right now', currentlyText: 'Going deeper into React and Node.js while looking for the next challenge.',
     gallery: 'Gallery', galleryLead: 'A few moments away from code and systems.', galleryOpen: 'Enlarge photo', galleryMore: 'View more', galleryLess: 'View less', galleryPrevious: 'Previous photo', galleryNext: 'Next photo',
     projects: 'Projects', projectsLead: 'Public projects and experiments I keep building on GitHub.', projectsLoading: 'Loading projects…', projectsError: 'Projects could not be loaded.', projectsEmpty: 'There are no public projects yet.', projectsMore: 'View more projects', projectsLess: 'View fewer projects', projectOpen: 'View on GitHub', projectDescription: 'This project does not have a GitHub description yet.',
     discordActive: 'Discord activity', discordIdle: 'No gaming activity', discordIdleText: 'Online on Discord', discordOffline: 'Offline on Discord', discordLoading: 'Connecting to Discord…', discordSession: 'This session',
   },
 }
+
+const navTargets = ['p0', 'p2', 'p1', 'p3', 'p4', 'p5']
 
 const LangContext = createContext(null)
 function LangProvider({ children }) {
@@ -77,6 +79,8 @@ function ToolIcon({ name }) { const [Icon, color] = toolIcons[name] || [Wrench, 
 const email = 'almeidafrancisco1527@gmail.com'
 const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}`
 const linkedInUrl = 'https://www.linkedin.com/in/francisco-almeida-175778199'
+const discordUserId = '880526653103702148'
+const discordProfileUrl = `https://discord.com/users/${discordUserId}`
 const MailLink = ({ children, className = '', ...props }) => <a className={className} href={gmailComposeUrl} target="_blank" rel="noreferrer" {...props}>{children}</a>
 const CVLink = ({ children, className = '', ...props }) => <a className={className} href="/Francisco%20Correia%20Almeida.pdf" download {...props}>{children}</a>
 
@@ -182,8 +186,6 @@ function SpotifyCard() {
     {track?.songUrl && <a href={track.songUrl} target="_blank" rel="noreferrer" aria-label="Open on Spotify"><ExternalLink size={15}/></a>}
   </article>
 }
-
-const discordUserId = '880526653103702148'
 
 function discordActivityImage(activity) {
   const image = activity?.assets?.large_image
@@ -318,9 +320,9 @@ function V1() {
   const { t, lang } = useLang(); const start = new Date(new Date().getFullYear(),0,1); const end = new Date(new Date().getFullYear()+1,0,1); const year = Math.round(((Date.now()-start)/(end-start))*100)
   const [dark, setDark] = useState(() => localStorage.getItem('xxsi-theme') === 'dark')
   useEffect(() => { localStorage.setItem('xxsi-theme', dark ? 'dark' : 'light') }, [dark])
-  return <main className={`pgrid ${dark ? 'pgrid-dark' : ''}`}><header className="pgrid-nav"><Link to="/" className="pgrid-logo">FA</Link><nav>{t.nav.map((x,i)=><a href={`#p${i}`} key={x}>{x}</a>)}</nav><div className="pgrid-actions"><LangButton/><button className="theme-toggle" onClick={() => setDark(v => !v)} aria-label={dark ? (lang === 'pt' ? 'Ativar tema claro' : 'Use light mode') : (lang === 'pt' ? 'Ativar tema escuro' : 'Use dark mode')}>{dark ? <Sun size={14}/> : <Moon size={14}/>}<span>{dark ? 'LIGHT' : 'DARK'}</span></button></div></header><div className="pgrid-wrap">
+  return <main className={`pgrid ${dark ? 'pgrid-dark' : ''}`}><header className="pgrid-nav"><Link to="/" className="pgrid-logo">FA</Link><nav>{t.nav.map((x,i)=><a href={`#${navTargets[i]}`} key={x}>{x}</a>)}</nav><div className="pgrid-actions"><LangButton/><button className="theme-toggle" onClick={() => setDark(v => !v)} aria-label={dark ? (lang === 'pt' ? 'Ativar tema claro' : 'Use light mode') : (lang === 'pt' ? 'Ativar tema escuro' : 'Use dark mode')}>{dark ? <Sun size={14}/> : <Moon size={14}/>}<span>{dark ? 'LIGHT' : 'DARK'}</span></button></div></header><div className="pgrid-wrap">
     <section className="pgrid-head" id="p0"><div className="identity"><img src="/profile.png" alt="Francisco Almeida"/><div><h1>Francisco Almeida <b>✓</b></h1><p>{t.role}<i></i></p><MailLink>{email}</MailLink></div></div><div className="local"><Clock/><span>WEST · {t.city}</span></div></section>
-    <section className="pgrid-about"><p>{t.intro}</p><div className="socials"><a href="https://github.com/Xxsi07" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><SiGithub size={15}/></a><a href={linkedInUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><FaLinkedinIn size={14}/></a><MailLink aria-label="Email" title="Email"><Mail size={14}/></MailLink><CVLink className="cv-icon" aria-label="CV" title="CV"><FileText size={14}/></CVLink></div></section>
+    <section className="pgrid-about"><p>{t.intro}</p><div className="socials"><a href="https://github.com/Xxsi07" target="_blank" rel="noreferrer" aria-label="GitHub" title="GitHub"><SiGithub size={15}/></a><a href={linkedInUrl} target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn"><FaLinkedinIn size={14}/></a><a href={discordProfileUrl} target="_blank" rel="noreferrer" aria-label="Discord" title="Discord"><FaDiscord size={15}/></a><MailLink aria-label="Email" title="Email"><Mail size={14}/></MailLink><CVLink className="cv-icon" aria-label="CV" title="CV"><FileText size={14}/></CVLink></div></section>
     <section className="pgrid-widgets"><div className="now-card"><span>● {t.currently}</span><p>{t.currentlyText}</p></div><div className="status-card"><i></i><span>{t.status}</span></div><SpotifyCard/><DiscordActivity/></section>
     <section className="year-card"><b>{new Date().getFullYear()}</b><span>PROGRESS</span><div><i style={{width:`${year}%`}}></i></div><strong>{year}% · DAY {Math.ceil((Date.now()-start)/86400000)}/365</strong></section>
     <section className="pgrid-tools" id="p2"><p>{t.toolkit}</p><div>{t.groups.flatMap(g=>g.items).map(x=><span key={x} title={x}><ToolIcon name={x}/><small>{x}</small></span>)}</div></section>
@@ -336,4 +338,3 @@ function V1() {
 function ScrollTop() { const { pathname } = useLocation(); useEffect(() => { window.scrollTo(0,0) }, [pathname]); return null }
 function App() { return <LangProvider><ScrollTop/><Routes><Route path="/" element={<V1/>}/><Route path="/1" element={<V1/>}/><Route path="*" element={<Navigate to="/" replace/>}/></Routes></LangProvider> }
 ReactDOM.createRoot(document.getElementById('root')).render(<React.StrictMode><BrowserRouter><App/></BrowserRouter></React.StrictMode>)
-
